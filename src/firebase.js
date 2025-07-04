@@ -38,4 +38,4 @@ const loginWithEmailAndPassword = async (email, password) => {
   }
 }
 
-export { registerWithEmailAndPassword, loginWithEmailAndPassword }
+export { registerWithEmailAndPassword, loginWithEmailAndPassword, auth }
