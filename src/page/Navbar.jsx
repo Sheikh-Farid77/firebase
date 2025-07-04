@@ -1,8 +1,9 @@
 import { Link } from "react-router";
 
 export default function Navbar() {
+
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto mb-10">
             <ul className="flex justify-center items-center gap-5 text-xl font-semibold">
                 <Link to='/'>Home</Link>
                 <Link to='/login'>Login</Link>
