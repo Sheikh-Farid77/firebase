@@ -22,6 +22,7 @@ export default function Register() {
     return (
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
             <div className="card-body">
+                <h1 className="text-center font-bold text-3xl">Registration Form</h1>
                 <fieldset className="fieldset">
                     <label className="label">Email</label>
                     <input onChange={(e) => setEmail(e.target.value)} value={email} type="email" className="input" placeholder="Email" required />
