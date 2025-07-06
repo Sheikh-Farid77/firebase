@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { loginWithEmailAndPassword } from "../firebase";
+import { loginWithEmailAndPassword, signInWithGoogle } from "../firebase";
 import { IoMdEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 
@@ -20,6 +20,11 @@ export default function Login() {
         } catch (err) {
             console.log(err)
         }
+    }
+    const handleGoogleLogin = async() => {
+      const user = await  signInWithGoogle();
+      console.log(user)
+        navigate('/')
     }
     return (
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto">
@@ -74,6 +79,13 @@ export default function Login() {
                         className="btn btn-neutral mt-4"
                     >
                         Login
+                    </button>
+                    <button
+                     
+                        onClick={handleGoogleLogin}
+                        className="btn border bg-blue-400 mt-4"
+                    >
+                        Login With Google
                     </button>
                 </fieldset>
             </div>
