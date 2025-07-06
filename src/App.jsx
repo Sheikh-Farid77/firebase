@@ -4,6 +4,7 @@ import Login from "./page/Login"
 import Register from "./page/Register"
 import Reset from "./page/Reset"
 import Navbar from "./page/Navbar"
+import PrivateRoute from "./page/PrivateRoute"
 
 
 function App() {
@@ -12,14 +13,16 @@ function App() {
   return (
     <>
       <Navbar />
-    <div className="container mx-auto">
+      <div className="container mx-auto">
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="reset" element={<Reset />} />
-      </Routes>
-    </div>
+          <Route element={<PrivateRoute />}>
+            <Route path="/" element={<Home />} />
+          </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="reset" element={<Reset />} />
+        </Routes>
+      </div>
     </>
   )
 }
